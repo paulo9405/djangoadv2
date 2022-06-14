@@ -4,7 +4,10 @@ from django.contrib.auth import logout
 
 # TODO: refatorar para usar threads assim que possivel
 def home(request):
-    return render(request, 'home.html')
+    value1 = 10
+    value2 = 20
+    res = value1 / value2
+    return render(request, 'home.html', {'result': res})
 
 # FIXME: corrigir bugs
 def my_logout(request):
