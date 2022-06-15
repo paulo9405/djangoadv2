@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Person
 from .forms import PersonForm
-from django.views.generic.base import TemplateView
+from django.views.generic.list import ListView
 
 
 @login_required
@@ -42,3 +42,9 @@ def persons_delete(request, id):
         return redirect('person_list')
 
     return render(request, 'person_delete_confirm.html', {'person': person})
+
+
+class PersonList(ListView):
+
+    model = Person
+    template_name = 'home3.html'
