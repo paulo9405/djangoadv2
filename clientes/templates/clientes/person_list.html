@@ -6,4 +6,6 @@ listagem de pessoas
     <a href="{% url 'person_detail_cbv' person.pk %}">{{person}}</a><br>
 {% endfor %}
 
+<a href="{% url 'person_create_cbv' %}">Novo</a>
+
 {{ now }}
