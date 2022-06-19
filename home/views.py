@@ -7,14 +7,12 @@ from django.views import View
 
 # TODO: refatorar para usar threads assim que possivel
 def home(request):
-    value1 = 10
-    value2 = 20
-    res = value1 / value2
-    return render(request, 'home.html', {'result': res})
+    return render(request, 'clientes/home.html')
 
 # FIXME: corrigir bugs
 def my_logout(request):
     logout(request)
+    1+1
     return redirect('home')
 
 
