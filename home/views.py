@@ -7,7 +7,7 @@ from django.views import View
 
 # TODO: refatorar para usar threads assim que possivel
 def home(request):
-    return render(request, 'clientes/home.html')
+    return render(request, 'home/home.html')
 
 # FIXME: corrigir bugs
 def my_logout(request):
