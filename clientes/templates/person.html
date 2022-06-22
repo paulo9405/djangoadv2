@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load filters %}
+
 
 {% block title %} Administracao {% endblock %}
 
@@ -40,6 +42,33 @@
             {% endif %}
         </div>
     </div>
+
+
+{% filter force_escape|lower %}
+    This text will be HTML-escaped, and will appear in all uppercase.
+{% endfilter %}
+
+
+<ul>
+{% for athlete in athlete_list %}
+    <li>{{ athlete.name }}</li>
+{% empty %}
+    <li>Desculpe nao existe clientes cadastrados</li>
+{% endfor %}
+</ul>
+
+
+{% if persons|length >= 200 %}
+    You have lots of message today!
+{% endif %}
+
+{% now "d F Y H:i" %}
+
+{% now "jS F Y H:i" %}
+
+{{ footer_message|my_filter }}
+
+{{ 123.3445|arredonda:1 }}
 
 
 {% endblock %}
